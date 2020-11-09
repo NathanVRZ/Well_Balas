@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 
+import './Header/style.css';
 import './style.css';
 
-export default class Main extends Component {
+import Header from './Header';
+// import produtos from './pages/Produtos';
+
+export default class produtos extends Component {
     state = {
         produtos: [],
     };
@@ -13,7 +17,7 @@ export default class Main extends Component {
     }
 
     LoadProducts = async () => {
-        const res = await api.get("/");
+        const res = await api.get("/produtos");
         // console.log(response.data);
         this.setState({ produtos: res.data.response });
     };
@@ -21,6 +25,8 @@ export default class Main extends Component {
     render() {
         const { produtos } = this.state;
         return (
+            <div>
+                <Header />
             <div className="lista-prod">
                 {produtos.map(produto => (
                     <article key={produto.idProduto}>
@@ -29,6 +35,7 @@ export default class Main extends Component {
                         <a href="cara.html">Editar</a>
                     </article>
                 ))}
+            </div>
             </div>
         )
     }

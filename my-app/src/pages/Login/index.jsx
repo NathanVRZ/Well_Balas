@@ -1,36 +1,27 @@
 import React, { Component } from 'react';
-import api from '../../services/api';
+import './styled.css'
 
-import './style.css';
-
-export default class Main extends Component {
-    state = {
-        produtos: [],
-    };
-
-    componentDidMount() {
-        this.LoadProducts();
-    }
-
-    LoadProducts = async () => {
-        const res = await api.get("/");
-        // console.log(response.data);
-        this.setState({ produtos: res.data.response });
-    };
-
+export default class login extends Component {
     render() {
-        const { produtos } = this.state;
         return (
-            <div className="lista-prod">
-                {produtos.map(produto => (
-                    <article key={produto.idProduto}>
-                        <strong>{produto.nome}</strong>
-                        <p>Unidades: {produto.quantidade}</p>
-                        <a href="cara.html">Editar</a>
-                    </article>
-                ))}
+            <div className="fundo">
+                <section className="loginbox">
+                    <h1>Entrar</h1>
+                    <form id="form_login" className="box" method="post" onsubmit="return entrar()">
+                        <input type="text" placeholder="email" name="Email"/>
+                        <br/>
+                        <input type="password" placeholder="Senha" name="senha"/>
+                        <br/>
+                        <button className="btn" id="btn_entrar">ENTRAR</button>
+                    </form>
+
+                    <div>
+                    <button className="btn" id="btn_entrar">INICIO</button>
+                    <button className="btn" id="btn_entrar1">CADASTRAR</button>
+                    </div>
+
+                </section>
             </div>
         )
     }
-
 }

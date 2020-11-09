@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    transition: 0.5s;
+    scroll-behavior: smooth;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+a {
+    margin: 0vmin;
+    transition: 0.2s;
+}
+
+
+
+a:hover {
+    background: #d66c15;
+    padding: 2px 2px;
+    transition: .5s;
+    border-radius: 2px;
+}
+
+nav {
+    background: #330A00;
+    height: auto;
+    width: 100%;
+    transition: 0.2s;
+    padding-top: 2rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    z-index: 10;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 2.2vmin;
+    font-weight: 600;
+}
+
+nav ul li {
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#home {
+    height: 100vmin;
+    width: 100%;
+    background-size: cover;
+    padding-bottom: 10vmin;
+    background-image: url(./imagens/vectorHome.svg);
+    background-position: center;
+}
+
+#lista1 {
+    margin-top: 3%;
+}
+
+#lista2 {
+    margin-top: 3%;
+}
+
+#logo  {
+    display: none;
+}
+
+.logo {
+    font-size: 5vmin;
+    color: white;
+}
+
+nav .logo, .filtro #logo{
+    width: 15vmin;
+    -webkit-filter: drop-shadow(5px 5px 6px #222);
+    filter: drop-shadow(5px 5px 6px #222);
+}
+
+.filtro h1{
+    margin-top: 14vmin;
+    font-size: 20vmin;
+    color: white;
+}
+
+.filtro p{
+    font-size: 5vmin;
+    color: white;
+}
+
+                    /* HOME FINALIZADA  */
+
+.box-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0vmin;
+}
+
+.box-about p{
+    font-size: 2.5vmin;
+    margin-top: 20vmin;
+}
+
+.box-about img{
+    width: 90vmin;
+}
+
+.H1Sobre {
+    padding-top: 5vmin;
+    font-size: 6vmin;
+}
+
+                        /* SOBRE FINALIZADA  */             
+
+.box-prod {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20vmin;
+    margin-bottom: 8vmin;
+}
+
+.card {
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 190px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-left: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 3.5vmin;
+  }
+  
+  .card .botao {
+    border: none;
+    outline: 0;
+    padding: 1.5vmin;
+    color: white;
+    background-color: #330a00;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .card .botao:hover {
+    opacity: 0.9;
+  }
+
+.h1Prod {
+    font-size: 5vmin;
+    padding-bottom: 6vmin;
+}
+
+.doceP{
+    width: 75vmin;
+}
+
+/* PRODUTOS FINALIZADOS */
+
+.logofooter {
+    width: 25vmin;
+    padding: 4vmin;
+    -webkit-filter: drop-shadow(5px 5px 6px #222);
+    filter: drop-shadow(5px 5px 6px #222);
+}
+
+footer {
+    border-top: 10px solid #d66c15;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #330A00;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icons {
+    font-size: 5vmin;
+}
+
+.icons i {
+    margin: 3vmin;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: #d66c15;
+    text-shadow: 0px 0px 7px #d66c15;
+}
+
+/* Site finalizado */
+/* ----------------- mobile -------------------- */
+
+@media(max-width: 745px){
+    .box-about {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 0vmin;
+    }
+    
+    .box-about p{
+        text-align: center;
+        margin-top: 0vmin;
+    }
+    
+    .box-about img{
+        display: none;
+        width: 90vmin;
+    }
+    
+    .H1Sobre {
+        padding-top: 5vmin;
+        font-size: 6vmin;
+    }
+    .box-prod {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 20vmin;
+        margin-bottom: 8vmin;
+    }
+    
+    .card {
+        display: inline-block;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 190px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        margin-left: 2%;
+        margin-bottom: 2%;
+      }
+      
+      .price {
+        color: grey;
+        font-size: 3.5vmin;
+      }
+      
+      .card button {
+        border: none;
+        outline: 0;
+        padding: 1.5vmin;
+        color: white;
+        background-color: #330a00;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      
+      .card button:hover {
+        opacity: 0.7;
+      }
+    
+    .h1Prod {
+        font-size: 5vmin;
+        padding-bottom: 6vmin;
+    }
+    
+    .doceP{
+        display: none;
+        width: 75vmin;
+    }
+}
