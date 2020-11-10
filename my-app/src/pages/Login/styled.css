@@ -6,6 +6,7 @@
     font-family: sans-serif;
     display: flex;
     background: #f3e9de;
+
 }
 
 .loginbox {
@@ -59,6 +60,7 @@
     cursor: pointer;
     margin-top: 1vmin;
     margin-left: 25px;
+    text-decoration: none;
 }
 
 .btn_entrar1 {

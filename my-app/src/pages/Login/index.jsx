@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './styled.css'
+
 
 export default class login extends Component {
     render() {
@@ -16,8 +18,8 @@ export default class login extends Component {
                     </form>
 
                     <div>
-                    <button className="btn" id="btn_entrar">INICIO</button>
-                    <button className="btn" id="btn_entrar1">CADASTRAR</button>
+                    <Link to="/" className="btn"  id="btn_entrar">INICIO</Link>
+                    <Link to="/cadastro" className="btn" id="btn_entrar1">CADASTRAR</Link>
                     </div>
 
                 </section>
