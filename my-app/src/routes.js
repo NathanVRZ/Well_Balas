@@ -7,6 +7,12 @@ import login from './pages/login';
 import cadastro from './pages/cadastro';
 import clientes from './pages/clientes';
 import ingredientes from './pages/ingredientes';
+import notfound from './pages/notfound';
+import admin from './pages/admin';
+import addproduto from './pages/addproduto';
+import addingredientes from './pages/addingrediente';
+import editarprod from './pages/editarprod';
+
 
 function Routes() {
     return(
@@ -18,6 +24,11 @@ function Routes() {
                 <Route exact path='/cadastro' component={cadastro} />
                 <Route exact path='/clientes' component={clientes} />
                 <Route exact path='/ingredientes' component={ingredientes} />
+                <Route exact path='/admin' component={admin} />
+                <Route exact path='/addproduto' component={addproduto} />
+                <Route exact path='/addingrediente' component={addingredientes} />
+                <Route exact path='/editarprod/:idProduto' component={editarprod} />
+                <Route component={notfound}/>
             </Switch>
         </BrowserRouter>
     )

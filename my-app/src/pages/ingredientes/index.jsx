@@ -27,6 +27,11 @@ export default class produtos extends Component {
         return (
             <div>
                 <Header />
+                <div className="icons1">
+                    <center>
+                    <a href="./addingrediente"><i className="fas fa-plus-square"></i></a>
+                    </center>
+                </div>
             <div className="lista-ing">
                 {ingredientes.map(produto => (
                     <article key={produto.ingrediente}>

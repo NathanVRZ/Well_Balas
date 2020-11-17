@@ -1,17 +1,17 @@
-.lista-prod {
+.lista-user {
     max-width: 700px;
     margin: 20px auto 0;
     padding: 0 20px;
 }
 
-.lista-prod article {
+.lista-user article {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.lista-prod article a {
+.lista-user article a {
     color: #da552f;
     height: 42px;
     border-radius: 5px;
@@ -25,11 +25,26 @@
     transition: all 0.2s;
 }
 
-.lista-prod article a:hover {
+.lista-user article a:hover {
     background: #da552f;
     color: #fff;
 }
 
-.add a{
-    text-decoration: none;
+.icons1 {
+    font-size: 8vmin;
+}
+
+.icons1 i {
+    margin: 3vmin;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.icons1 i a:hover {
+    color: #d66c15;
+    text-shadow: 0px 0px 7px #d66c15;
+}
+
+a {
+    color: black;
 }
