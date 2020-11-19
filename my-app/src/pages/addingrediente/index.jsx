@@ -44,6 +44,7 @@ export default class addingrediente extends Component {
         return(
             <section className="loginbox">
             <h1>CADASTRO DE INGREDIENTE</h1>
+            {}
             <form id="form_produto" className="box" onSubmit={this.onSubmit}>
                 <label htmlFor="nome">
                 <p className="cadasp">Nome</p>

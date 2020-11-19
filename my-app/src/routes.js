@@ -12,6 +12,7 @@ import admin from './pages/admin';
 import addproduto from './pages/addproduto';
 import addingredientes from './pages/addingrediente';
 import editarprod from './pages/editarprod';
+import deletarprod from './pages/deletarprod';
 
 
 function Routes() {
@@ -28,6 +29,7 @@ function Routes() {
                 <Route exact path='/addproduto' component={addproduto} />
                 <Route exact path='/addingrediente' component={addingredientes} />
                 <Route exact path='/editarprod/:idProduto' component={editarprod} />
+                <Route exact path='/deletarprod/:idProduto' component={deletarprod} />
                 <Route component={notfound}/>
             </Switch>
         </BrowserRouter>

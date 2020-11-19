@@ -38,7 +38,9 @@ export default class produtos extends Component {
                         <article key={produto.idProduto}>
                             <strong>{produto.nome}</strong>
                             <p>Unidades: {produto.quantidade}</p>
+                            <p>Identificador: {produto.idProduto}</p>
                             <Link to={`/editarprod/${produto.idProduto}`}>Editar</Link>
+                            <Link to={`/deletarprod/${produto.idProduto}`}>Deletar</Link>
                         </article>
                     ))}
                 </div>
