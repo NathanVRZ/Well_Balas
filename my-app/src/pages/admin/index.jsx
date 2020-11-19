@@ -3,6 +3,8 @@ import api from '../../services/api';
 
 import Header from './Header';
 import './admin.css'
+import Chart from './chartjs'
+
 
 export default class admin extends Component {
     state = {
@@ -33,7 +35,7 @@ export default class admin extends Component {
                         </article>
                     ))}
                 </div>
-
+                        <Chart />
                 <div className="icons1">
                     <center>
                     <a href="./produtos"><i className="fas fa-warehouse"></i></a>
