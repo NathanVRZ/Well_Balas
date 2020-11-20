@@ -14,7 +14,7 @@ export default class deletarprod extends Component {
             
             this.onSubmit = (ev) => {
             ev.preventDefault();
-            api.delete("/produtos", {
+            api.delete(`/produtos`, {
                 idProduto: this.state.idProduto
             });
             }

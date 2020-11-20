@@ -7,8 +7,8 @@ import './chartJ.css'
 
 const ChartJs = () => {
     const [chartData, setChartData] = useState({});
-    const [nome, setnome] = useState({});
-    const [quantidade, setquantidade] = useState({});
+    // const [nome, setnome] = useState({});
+    // const [quantidade, setquantidade] = useState({});
 
     const chart = () => {
         let nome1 = [];
@@ -25,16 +25,8 @@ const ChartJs = () => {
                     {
                         label: 'Produtos',
                         data: quantidade1,
-                        backgroundColor: [
+                        backgroundColor: 
                             'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                            'rgba(227,124,0, 0.8)',
-                        ]
                     }
                 ]
             });
