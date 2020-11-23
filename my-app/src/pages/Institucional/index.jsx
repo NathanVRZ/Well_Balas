@@ -13,7 +13,7 @@ export default class institucional extends Component {
               <a href="#home">Inicio</a>
             </li>
             <li>
-              <a href="#sobre">Sobre</a>
+              <a  href="#sobre">Sobre</a>
             </li>
           </ul>
           <div>

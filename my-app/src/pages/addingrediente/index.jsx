@@ -1,64 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
 import api from '../../services/api';
-// import { Redirect } from 'react-router-dom';
-
-
+import { useHistory } from 'react-router-dom';
 import './style.css'
 
-export default class addingrediente extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            nome: "",
-            quantidade: ""
-        }
-        
-        // this.History = useHistory()
 
-        this.onChange = (ev) => {
-            // const {name, value} = ev.target;
-            this.setState({nome: ev.target.value});
 
-            console.log(ev.target);
-            }
+const AddIngrediente = () => {
+    const [values, setValues] = React.useState({
+        nome: "",
+        quantidade: ""
+    });
+    const hist = useHistory();
 
-            this.onChange1 = (ev) => {
-                // const {name, value} = ev.target;
-                
-                this.setState({quantidade: ev.target.value});
-                }
-            
-            this.onSubmit = (ev) => {
-            ev.preventDefault();
-            api.post("/ingredientes", {
-                nome: this.state.nome,
-                quantidade: this.state.quantidade
-            });
-            }
+    function onChange(ev) {
+        const { name, value } = ev.target;
+
+        setValues({ ...values, [name]: value});
     }
 
+    function onSubmit(ev) {
+        ev.preventDefault();
 
+        api.post('/ingredientes', values)
+        .then((response) => {
+            hist.push('/ingredientes')
+        })
+    }
 
-
-    render() {
-        return(
-            <section className="loginbox">
-            <h1>CADASTRO DE INGREDIENTE</h1>
-            {}
-            <form id="form_produto" className="box" onSubmit={this.onSubmit}>
+        return (
+        <section className="loginbox">
+            <h1>CADASTRO DE INGREDIENTES</h1>
+            <form id="form_produto" className="box" onSubmit={onSubmit}>
                 <label htmlFor="nome">
-                <p className="cadasp">Nome</p>
-                <input type="text" id="nome" value={this.state.nome} name="nome" onChange={this.onChange}/>
+                    <p className="cadasp">Nome</p>
+                    <input type="text" id="nome" name="nome" onChange={onChange} />
                 </label>
-                <br/>
+                <br />
                 <label htmlFor="quantidade">
-                <p className="cadasp">Quantidade</p>
-                <input type="text" id="quantidade" value={this.state.quantidade} name="quantidade" onChange={this.onChange1}/>
+                    <p className="cadasp">Quantidade</p>
+                    <input type="text" id="quantidade" name="quantidade" onChange={onChange} />
                 </label>
-                <br/>
+                <br />
                 <button className="btn" id="btn_entrar">CADASTRAR</button>
             </form>
         </section>
-        )
-    }
+    )
 }
+
+export default AddIngrediente;

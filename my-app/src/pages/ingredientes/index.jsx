@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-
 import './Header/style.css';
-import './style.css';
-
 import Header from './Header';
-// import produtos from './pages/Produtos';
+
+import * as S from './style.js';
 
 export default class produtos extends Component {
     state = {
@@ -18,7 +16,6 @@ export default class produtos extends Component {
 
     LoadIngrediente = async () => {
         const res = await api.get("/ingredientes");
-        // console.log(response.data);
         this.setState({ ingredientes: res.data.response });
     };
 
@@ -27,20 +24,19 @@ export default class produtos extends Component {
         return (
             <div>
                 <Header />
-                <div className="icons1">
-                    <center>
-                    <a href="./addingrediente"><i className="fas fa-plus-square"></i></a>
-                    </center>
-                </div>
-            <div className="lista-ing">
-                {ingredientes.map(produto => (
-                    <article key={produto.ingrediente}>
-                        <strong>{produto.nome}</strong>
-                        <p>Unidades: {produto.quantidade}</p>
-                        <a href="cara.html">Editar</a>
-                    </article>
-                ))}
-            </div>
+                <S.Icon4>
+                        <a href="/admin"><i className="fas fa-home"></i></a>
+                        <a href="./addingrediente"><i className="fas fa-plus-square"></i></a>
+                </S.Icon4>
+                <S.List2>
+                    {ingredientes.map(produto => (
+                        <article key={produto.ingrediente}>
+                            <strong>{produto.nome}</strong>
+                            <p>Unidades: {produto.quantidade}</p>
+                            <a href="cara.html">Editar</a>
+                        </article>
+                    ))}
+                </S.List2>
             </div>
         )
     }

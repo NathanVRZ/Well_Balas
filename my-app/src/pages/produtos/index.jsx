@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
-
+import * as S from './style.js'
 import './Header/style.css';
-import './style.css';
 
 import Header from './Header';
 // import produtos from './pages/Produtos';
@@ -28,12 +27,11 @@ export default class produtos extends Component {
         return (
             <div>
                 <Header />
-                <div className="icons1">
-                    <center>
+                <S.Icon1>
+                    <a href="/admin"><i className="fas fa-home"></i></a>
                     <a href="./addproduto"><i className="fas fa-plus-square"></i></a>
-                    </center>
-                </div>
-                <div className="lista-prod">
+                </S.Icon1>
+                <S.Lista1>
                     {produtos.map(produto => (
                         <article key={produto.idProduto}>
                             <strong>{produto.nome}</strong>
@@ -43,7 +41,7 @@ export default class produtos extends Component {
                             <Link to={`/deletarprod/${produto.idProduto}`}>Deletar</Link>
                         </article>
                     ))}
-                </div>
+                </S.Lista1>
             </div>
         )
     }

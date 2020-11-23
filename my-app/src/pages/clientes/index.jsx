@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-
+import * as S from './style.js';
 import './Header/style.css';
-import './style.css';
-
 import Header from './Header';
-// import produtos from './pages/Produtos';
 
 export default class clientes extends Component {
     state = {
@@ -27,7 +24,10 @@ export default class clientes extends Component {
         return (
             <div>
                 <Header />
-            <div className="lista-clientes">
+                <S.Icon2>
+                    <a href="/admin"><i className="fas fa-home"></i></a>
+                </S.Icon2>
+            <S.ListaCliente>
                 {usuarios.map(cliente => (
                     <article key={cliente.idUsuario}>
                         <strong>{cliente.Loja}</strong>
@@ -35,7 +35,7 @@ export default class clientes extends Component {
                         <a href="cara">Editar</a>
                     </article>
                 ))}
-            </div>
+            </S.ListaCliente>
             </div>
         )
     }

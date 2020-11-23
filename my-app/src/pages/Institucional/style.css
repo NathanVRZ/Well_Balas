@@ -14,20 +14,20 @@ html {
     scroll-behavior: smooth;
 }
 
-nav a {
+nav li a  {
     text-decoration: none;
     color: white;
     font-size: 20px;
 }
 
-a {
+li a {
     margin: 0vmin;
     transition: 0.2s;
 }
 
 
 
-a:hover {
+li a:hover {
     background: #d66c15;
     padding: 2px 2px;
     transition: .5s;

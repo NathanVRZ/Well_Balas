@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-
+import * as S from './admin.js';
 import Header from './Header';
-import './admin.css'
 import Chart from './chartjs'
 
 
@@ -17,7 +16,6 @@ export default class admin extends Component {
 
     LoadUser = async () => {
         const res = await api.get("/usuarios/1");
-        // console.log(response.data);
         this.setState({ usuarios: res.data.response });
     };
 
@@ -26,7 +24,7 @@ export default class admin extends Component {
         return (
             <div>
                 <Header />
-                <div className="lista-user">
+                <S.Lista>
                     {usuarios.map(usuario => (
                         <article key={usuario.idUsuario}>
                             <strong className="">{usuario.Loja}</strong>
@@ -34,15 +32,15 @@ export default class admin extends Component {
                             <p>CNPJ: {usuario.CNPJ}</p>
                         </article>
                     ))}
-                </div>
+                </S.Lista>
                         <Chart />
-                <div className="icons1">
-                    <center>
+
+                    <S.Icon>
                     <a href="./produtos"><i className="fas fa-warehouse"></i></a>
                     <a href="./ingredientes"><i className="fas fa-cookie"></i></a>
                     <a href="./clientes"><i className="fas fa-store"></i></a>
-                    </center>
-                </div>
+                    </S.Icon>
+                
             </div>
         )
     }
