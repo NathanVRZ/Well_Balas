@@ -6,7 +6,7 @@ export const Grid = styled.div`
     grid-template-columns: 100px 100px;
     grid-template-rows: 1fr;
     margin-left: 45vmin;
-    margin-top: 10vmin;
+    margin-top: 3vmin;
 
     #Q1 { 
     max-height: 22vmin;

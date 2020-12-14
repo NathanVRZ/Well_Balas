@@ -32,7 +32,6 @@ export default class clientes extends Component {
                     <article key={cliente.idUsuario}>
                         <strong>{cliente.Loja}</strong>
                         <p>Endereço: {cliente.Rua}</p>
-                        <a href="cara">Editar</a>
                     </article>
                 ))}
             </S.ListaCliente>

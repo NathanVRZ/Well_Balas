@@ -6,38 +6,49 @@ import './styled.css'
 
 
 const Login = () => {
-    const [values, setValues] = React.useState({
-        Email: "",
-        senha: ""
-    });
     const hist = useHistory();
 
-    function onChange(ev) {
-        const { name, value } = ev.target;
 
-        setValues({ ...values, [name]: value });
+    const[form, setForm] = React.useState({
+        Email: '',
+        senha: ''
+    })
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        await api.post('/usuarios/login', {
+            Email: form.Email,
+            senha: form.senha,
+        }).then (function(res){
+            localStorage.setItem('idUsuario', res.data.idUsuario);
+            if (res.data.admin === 1){
+                hist.push('/admin')
+            }else {
+                hist.push('/usuario')
+            }
+            console.log(res)
+        })
     }
 
-    function onSubmit(ev) {
-        ev.preventDefault();
-
-        api.post('/usuarios/login', values)
-            .then((response) => {
-                hist.push('/admin');
-            });
+    function handleChange({target}) {
+        const{id, value} = target;
+        setForm({
+            ... form,
+            [id]: value
+        })
     }
 
     return (
         <div className="fundo">
             <section className="loginbox">
                 <h1>Entrar</h1>
-                <form id="form_login" className="box" onSubmit={onSubmit}>
+                <form id="form_login" className="box" onSubmit={handleSubmit}>
                     <label htmlFor="Email">
-                        <input type="text" id="Email" placeholder="email" name="Email" onChange={onChange} />
+                        <input type="text" id="Email" placeholder="email" name="Email" onChange={handleChange} />
                     </label>
                     <br />
                     <label htmlFor="senha">
-                        <input type="password" id="senha" placeholder="Senha" name="senha" onChange={onChange} />
+                        <input type="password" id="senha" placeholder="Senha" name="senha" onChange={handleChange} />
                     </label>
                     <br />
                     <button className="btn" id="btn_entrar">ENTRAR</button>

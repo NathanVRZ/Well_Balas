@@ -62,8 +62,8 @@ const Cadastro = () => {
                 </form>
 
                 <div>
-                    <button className="btn" id="btn_entrar">INICIO</button>
-                    <button className="btn" id="btn_entrar1">LOGIN</button>
+                    <a className="btn" id="btn_entrar" href="/" >INICIO</a>
+                    <a className="btn" id="btn_entrar1" href="/login">LOGIN</a>
                 </div>
 
             </section>

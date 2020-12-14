@@ -27,13 +27,15 @@ export default class produtos extends Component {
                 <S.Icon4>
                         <a href="/admin"><i className="fas fa-home"></i></a>
                         <a href="./addingrediente"><i className="fas fa-plus-square"></i></a>
+                        <a href="./editaringre"><i className="fas fa-edit"></i></a>
+
                 </S.Icon4>
                 <S.List2>
                     {ingredientes.map(produto => (
                         <article key={produto.ingrediente}>
                             <strong>{produto.nome}</strong>
                             <p>Unidades: {produto.quantidade}</p>
-                            <a href="cara.html">Editar</a>
+                            <p>Identificador: {produto.idIngrediente}</p>
                         </article>
                     ))}
                 </S.List2>

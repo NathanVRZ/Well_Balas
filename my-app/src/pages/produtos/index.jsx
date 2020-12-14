@@ -30,6 +30,8 @@ export default class produtos extends Component {
                 <S.Icon1>
                     <a href="/admin"><i className="fas fa-home"></i></a>
                     <a href="./addproduto"><i className="fas fa-plus-square"></i></a>
+                    <a href="./editarprod"><i className="fas fa-edit"></i></a>
+
                 </S.Icon1>
                 <S.Lista1>
                     {produtos.map(produto => (
@@ -37,8 +39,6 @@ export default class produtos extends Component {
                             <strong>{produto.nome}</strong>
                             <p>Unidades: {produto.quantidade}</p>
                             <p>Identificador: {produto.idProduto}</p>
-                            <Link to={`/editarprod/${produto.idProduto}`}>Editar</Link>
-                            <Link to={`/deletarprod/${produto.idProduto}`}>Deletar</Link>
                         </article>
                     ))}
                 </S.Lista1>
